@@ -6,7 +6,7 @@ Prototipo estático para GitHub Pages: https://varelajoaquin2007-rgb.github.io/M
 
 - Ramo **Autos**.
 - Aseguradoras seleccionables: **Mercantil Andina (35%)**, **MAPFRE (25%)**, **Victoria (50%)**.
-- Descuentos precargados conforme a los valores informados por Majoseg. **No están verificados como límites contractuales**. Los porcentajes editables son solo para probar la interfaz.
+- Descuentos precargados conforme a los valores informados por Majoseg. **No están verificados como límites contractuales**. Los descuentos editables están limitados a los máximos informados por Majoseg: Mercantil 35%, MAPFRE 25% y Victoria 50%.
 - Selector dependiente de **marca → año → modelo → versión**, con catálogo **ilustrativo y limitado** que no representa los padrones oficiales de las compañías.
 - Opción de modelo y versión manual.
 - Patente y código postal del riesgo.
@@ -20,6 +20,10 @@ Esta versión **NO se conecta a ninguna aseguradora ni consulta patentes**. Los 
 ## Publicación
 
 En GitHub, abrir **Settings > Pages**. Elegir **Deploy from a branch**, rama **main** y carpeta **/(root)**. El archivo `index.html` es autocontenido y no requiere compilación.
+
+## Operación actual del broker
+
+Majoseg cotiza entrando de forma independiente al portal de cada compañía con usuarios propios. Las integraciones deberán contar con autorización y mantener credenciales del lado de un backend seguro; nunca dentro de GitHub Pages.
 
 ## Camino hacia cotizaciones reales
 
