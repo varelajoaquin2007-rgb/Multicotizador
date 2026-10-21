@@ -93,7 +93,7 @@ async function loadProvinces(){
     const inp=document.createElement('input');inp.name='zonaManual';inp.required=true;inp.maxLength=130;inp.placeholder='Ej.: Buenos Aires, Ramos Mejía';manual.append(inp);$('geoStatus').after(manual);
   }
 }
-$('provincia').addEventListener('change',async()=>{
+async function loadLocalityForProvince(){
   const id=$('provincia').value;
   const locality=$('localidadGeoref');locality.disabled=true;locality.required=true;locality.replaceChildren(option('','Cargando localidades…'));
   resetResults();
@@ -110,7 +110,8 @@ $('provincia').addEventListener('change',async()=>{
     const inp=document.createElement('input');inp.name='localidadManual';inp.required=true;inp.maxLength=100;inp.placeholder='Ingresar localidad';manual.append(inp);$('geoStatus').after(manual);
     $('geoStatus').textContent='No se pudo cargar localidades: '+e.message;
   }
-});
+}
+$('provincia').addEventListener('change',loadLocalityForProvince);
 
 let postalAbort=0,postalTimer;
 const normalizePostal=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
@@ -127,7 +128,7 @@ try {
  const province=[...$('provincia').options].find(o=>normalizePostal(o.textContent)===normalizePostal(state));
  if(province){
   $('provincia').value=province.value;
-  await $('provincia').dispatchEvent(new Event('change'));
+  await loadLocalityForProvince();
  }
  const select=$('localidadGeoref');
  const matched=[...select.options].find(o=>places.some(p=>normalizePostal(p['place name'])===normalizePostal(o.textContent)));
