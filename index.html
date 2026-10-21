@@ -1,16 +1,16 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101e32"><title>Majoseg · Multicotizador Autos</title><style>
 :root{font-family:Inter,system-ui,Arial,sans-serif;color:#1d3046;background:#f4f7fa}*{box-sizing:border-box}body{margin:0}header{background:#11243c;color:#fff;padding:20px max(24px,4vw);display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900;font-size:22px;letter-spacing:1px}.brand small{display:block;font-size:11px;color:#a8bbc9;font-weight:400;letter-spacing:0}.pill{font-size:11px;border:1px solid #61758c;border-radius:20px;padding:8px 12px}main{max-width:1250px;padding:36px 22px;margin:auto}.eyebrow{color:#17886e;font-size:11px;font-weight:800;letter-spacing:2px}h1{font-size:32px;margin:8px 0}h2{font-size:18px;margin:0 0 7px}p{color:#697c8e;line-height:1.5}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.card{background:white;border:1px solid #e0e7ee;border-radius:16px;padding:25px;box-shadow:0 8px 24px #0f25330b;margin-bottom:20px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:12px;font-weight:650;color:#43576b;margin:13px 0}input:not([type=checkbox]),select{display:block;width:100%;margin-top:7px;border-radius:9px;border:1px solid #d3dfe7;background:#fbfcfe;padding:11px;color:#263a4c;font:inherit;font-size:14px;min-width:0}button{border:0;cursor:pointer;font:inherit;border-radius:9px;padding:13px 16px;font-weight:700}.primary{background:#137e65;color:white;width:100%;margin-top:12px}.secondary{background:#ecf3f5;color:#315c60}.hint{font-size:12px;color:#7b8898}.warning{background:#fff4df;color:#876623;padding:12px 14px;border-radius:9px;font-size:12px;margin:17px 0}.company{border:1px solid #e3eaf0;border-radius:10px;padding:12px 15px;margin:10px 0}.company-head,.company-foot,.quote{display:flex;align-items:center;justify-content:space-between;gap:12px}.company-head label{margin:0;font-size:13px}.company-head input{accent-color:#157e67}.company-foot{margin-top:10px}.company-foot select{width:100px;margin:0}.company-foot span{font-size:12px;color:#778899}.badge{font-size:11px;color:#697e92}.quote{padding:16px;border:1px solid #dae6ec;border-radius:10px;margin:10px 0}.quote:first-child{border-color:#67baa3}.quote strong{display:block}.price{font-size:20px;color:#137e65;font-weight:850;text-align:right}.price small{display:block;color:#8294a3;font-size:10px;font-weight:400}.empty{border:1px dashed #cbd6df;border-radius:12px;padding:35px;text-align:center;color:#7d8d9e}footer{font-size:11px;color:#718598;margin:20px 0}@media(max-width:850px){.grid{grid-template-columns:1fr}}@media(max-width:520px){.fields{grid-template-columns:1fr}.pill{font-size:9px}.card{padding:18px}.quote{align-items:flex-start}.price{font-size:17px}}
 </style>
-<style>[hidden]{display:none!important}select:disabled{background:#edf1f4;color:#98a4af}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.hint-block{padding:10px;background:#eef6f4;border-radius:8px}.company-foot input[type=number]{width:115px;margin:0}.spinner-note{font-size:11px;color:#8d6b32}</style></head><body>
+<style>.insurer-group{border:1px solid #dce7ee;border-radius:13px;padding:17px;margin:14px 0;background:#fbfdff}.insurer-group h3{margin:0 0 12px;font-size:17px}.coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:10px}.coverage-card{border:1px solid #e4eaef;border-radius:9px;padding:12px;background:white}.coverage-card .price{font-size:19px;text-align:left;margin-top:7px}.coverage-card .badge{display:block;margin-top:5px}[hidden]{display:none!important}select:disabled{background:#edf1f4;color:#98a4af}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.hint-block{padding:10px;background:#eef6f4;border-radius:8px}.company-foot input[type=number]{width:115px;margin:0}.spinner-note{font-size:11px;color:#8d6b32}</style></head><body>
 <header><div class="brand">MAJOSEG<small>Multicotizador · Autos</small></div><div class="pill">PROTOTIPO · SIN TARIFAS REALES</div></header>
 <main><div class="eyebrow">MAJOSEG / RAMO AUTOMOTORES</div><h1>Nueva cotización de auto</h1><p>Configuración inicial para Mercantil Andina, MAPFRE y Victoria. El catálogo y los precios que se muestran son de demostración.</p>
 <div class="grid"><section class="card"><h2>01 · Vehículo y riesgo</h2><p class="hint">La búsqueda de datos exactos por patente requiere un proveedor autorizado; por ahora completá y verificá los datos manualmente.</p><form id="quoteForm"><div class="fields">
-<label>Patente<input id="patente" name="patente" required maxlength="8" placeholder="AA123BB" autocomplete="off"></label><label>Código postal del riesgo<input name="cp" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="1408"></label><label>Provincia del riesgo<select name="provincia" id="provincia" required><option value="">Cargando provincias…</option></select></label><label>Localidad del riesgo<select id="localidadGeoref" name="localidadGeoref" required disabled><option value="">Elegí primero provincia</option></select></label>
+<label>Patente<input id="patente" name="patente" required maxlength="8" placeholder="AA123BB" autocomplete="off"></label><label>Código postal del riesgo<input id="cp" name="cp" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="1408"></label><label>Provincia del riesgo<select name="provincia" id="provincia" required><option value="">Cargando provincias…</option></select></label><label>Localidad del riesgo<select id="localidadGeoref" name="localidadGeoref" required disabled><option value="">Elegí primero provincia</option></select></label>
 <label>Marca<select id="marca" name="marca" required></select></label><label>Año<select id="anio" name="anio" required></select></label>
 <label>Modelo<select id="modelo" name="modelo" required></select></label><label>Versión<select id="version" name="version" required></select></label>
 <label>Uso<select name="uso"><option value="Particular">Particular</option><option value="Comercial">Comercial</option><option value="Otro">Otro</option></select></label>
 </div>
-<p id="geoStatus" class="hint" role="status">Consultando catálogo geográfico oficial de Argentina…</p><p class="hint">La provincia y localidad identifican el riesgo geográfico, pero <b>no asignan automáticamente tarifas ni categorías de riesgo</b>. Cada aseguradora determina sus propias condiciones por zona.</p><p class="hint">¿No encontrás tu modelo o versión? Usá “Otro / carga manual” en las listas y completá los campos que aparecen.</p>
+<p id="postalStatus" class="hint" role="status">Podés ingresar un CP para buscar localidades, o seleccionar una localidad para consultar CP posibles.</p><p id="geoStatus" class="hint" role="status">Consultando catálogo geográfico oficial de Argentina…</p><p class="hint">La provincia y localidad identifican el riesgo geográfico, pero <b>no asignan automáticamente tarifas ni categorías de riesgo</b>. Cada aseguradora determina sus propias condiciones por zona.</p><p class="hint">¿No encontrás tu modelo o versión? Usá “Otro / carga manual” en las listas y completá los campos que aparecen.</p>
 <div id="manualFields" class="fields" hidden><label>Modelo manual<input id="modeloManual" name="modeloManual" maxlength="100" placeholder="Modelo exacto"></label><label>Versión manual<input id="versionManual" name="versionManual" maxlength="140" placeholder="Versión exacta"></label></div>
 <label>Cobertura solicitada<select name="cobertura" id="cobertura"><option value="todas">Todas las coberturas disponibles (predeterminado)</option><option value="rc">Responsabilidad civil</option><option value="terceros">Terceros completo</option><option value="riesgo">Todo riesgo con franquicia</option></select></label>
 <p class="hint hint-block">Si no elegís una cobertura específica, se mostrarán <b>todas las coberturas habilitadas en esta demo</b>. Cuando conectemos cada aseguradora, se consultarán las que realmente ofrezca para ese vehículo y zona.</p><button class="primary" type="submit">Comparar cotizaciones simuladas →</button></form></section>
@@ -40,11 +40,28 @@ function updateModels(){const brand=$('marca').value,year=Number($('anio').value
 function updateVersions(){const brand=$('marca').value,model=$('modelo').value;fill('version',brand&&catalog[brand]&&catalog[brand][model]?[...catalog[brand][model].versions,'Otro / carga manual']:['Otro / carga manual'],'Seleccionar versión');updateManual();resetResults()}
 function updateManual(){const customModel=$('modelo').value==='Otro / carga manual',customVersion=$('version').value==='Otro / carga manual';$('manualFields').hidden=!(customModel||customVersion);$('modeloManual').parentElement.hidden=!customModel;$('versionManual').parentElement.hidden=!(customVersion||customModel);$('modeloManual').required=customModel;$('versionManual').required=customVersion||customModel}
 function drawCompanies(){const parent=$('companies');parent.replaceChildren();for(const c of companies){const card=document.createElement('div');card.className='company';const head=document.createElement('div');head.className='company-head';const label=document.createElement('label'),chk=document.createElement('input');chk.type='checkbox';chk.checked=c.enabled;chk.addEventListener('change',()=>{c.enabled=chk.checked;drawCompanies();resetResults()});label.append(chk,document.createTextNode(' '+c.name));const badge=document.createElement('span');badge.className='badge';badge.textContent='Config. inicial '+presets.find(p=>p.id===c.id).discount+'%';head.append(label,badge);const foot=document.createElement('div');foot.className='company-foot';const txt=document.createElement('span');txt.textContent='Descuento a solicitar';const input=document.createElement('select');input.disabled=!c.enabled;input.setAttribute('aria-label','Descuento '+c.name);for(let i=0;i<=c.maxDiscount;i+=5)input.append(option(String(i),i+'%'));input.value=String(c.discount);input.addEventListener('change',()=>{c.discount=Number(input.value);resetResults()});foot.append(txt,input);card.append(head,foot);parent.append(card)}}
-function displayQuotes(quotes,plate,model,zone){const el=$('results');el.replaceChildren();el.className='';$('resultSubtitle').textContent='PRECIOS FICTICIOS · '+plate+' · '+model+' · '+zone+' · DESCUENTOS ILUSTRATIVOS (sin tarifa zonal)';if(!quotes.length){el.className='empty';el.textContent='No seleccionaste ninguna compañía.';return}for(const q of quotes){const row=document.createElement('div');row.className='quote';const left=document.createElement('div');const title=document.createElement('strong');title.textContent=q.name;const detail=document.createElement('span');detail.className='badge';detail.textContent=q.coverage+' · descuento de prueba '+q.discount+'%';left.append(title,detail);const right=document.createElement('div');right.className='price';right.textContent=money.format(q.price);const fine=document.createElement('small');fine.textContent='IMPORTE FICTICIO / MES';right.append(fine);row.append(left,right);el.append(row)}}
+function displayQuotes(quotes,plate,model,zone){
+const el=$('results');el.replaceChildren();el.className='';
+$('resultSubtitle').textContent='PRECIOS FICTICIOS · '+plate+' · '+model+' · '+zone+' · sin ajustes de riesgo zonal';
+if(!quotes.length){el.className='empty';el.textContent='No seleccionaste compañías.';return}
+for(const insurer of companies.filter(c=>c.enabled)){
+const list=quotes.filter(q=>q.id===insurer.id);if(!list.length)continue;
+const section=document.createElement('section');section.className='insurer-group';
+const heading=document.createElement('h3');heading.textContent=insurer.name;
+const sub=document.createElement('p');sub.className='hint';sub.textContent='Descuento ilustrativo seleccionado: '+insurer.discount+'% · sin tarifa oficial';
+const grid=document.createElement('div');grid.className='coverage-grid';
+for(const q of list){
+const card=document.createElement('div');card.className='coverage-card';
+const name=document.createElement('strong');name.textContent=q.coverage;
+const price=document.createElement('div');price.className='price';price.textContent=money.format(q.price);
+const disclaimer=document.createElement('span');disclaimer.className='badge';disclaimer.textContent='Mensual ficticio · no válido para cotizar';
+card.append(name,price,disclaimer);grid.append(card)}
+section.append(heading,sub,grid);el.append(section)}
+}
 fill('marca',Object.keys(catalog).sort(),'Seleccionar marca');fill('anio',Array.from({length:27},(_,i)=>String(2026-i)),'Seleccionar año');
 $('marca').addEventListener('change',updateModels);$('anio').addEventListener('change',updateModels);$('modelo').addEventListener('change',updateVersions);$('version').addEventListener('change',()=>{updateManual();resetResults()});
 $('quoteForm').addEventListener('input',resetResults);
-$('quoteForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const d=new FormData(form),plate=String(d.get('patente')).toUpperCase().replace(/\s/g,'');if(!/^(?:[A-Z]{2}[0-9]{3}[A-Z]{2}|[A-Z]{3}[0-9]{3})$/.test(plate)){alert('Ingresá una patente argentina con formato AA123BB o AAA123.');return}const model=d.get('modelo')==='Otro / carga manual'?String(d.get('modeloManual')).trim():d.get('modelo');const version=d.get('version')==='Otro / carga manual'||d.get('modelo')==='Otro / carga manual'?String(d.get('versionManual')).trim():d.get('version');if(!model||!version){alert('Seleccioná o completá modelo y versión.');return}const chosen=d.get('cobertura')==='todas'?coverages:coverages.filter(x=>x.id===d.get('cobertura'));const quotes=companies.filter(c=>c.enabled).flatMap(c=>chosen.map(cv=>({name:c.name,coverage:cv.name,discount:c.discount,price:Math.round(c.base*cv.factor*(1-c.discount/100))}))).sort((a,b)=>a.price-b.price);displayQuotes(quotes,plate,model+' '+version, (String(d.get('zonaManual')||'').trim() || ((String(d.get('localidadManual')||'').trim() || $('localidadGeoref').selectedOptions[0].textContent)+', '+$('provincia').selectedOptions[0].textContent)));$('resultados').scrollIntoView({behavior:'smooth'})});
+$('quoteForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const d=new FormData(form),plate=String(d.get('patente')).toUpperCase().replace(/\s/g,'');if(!/^(?:[A-Z]{2}[0-9]{3}[A-Z]{2}|[A-Z]{3}[0-9]{3})$/.test(plate)){alert('Ingresá una patente argentina con formato AA123BB o AAA123.');return}const model=d.get('modelo')==='Otro / carga manual'?String(d.get('modeloManual')).trim():d.get('modelo');const version=d.get('version')==='Otro / carga manual'||d.get('modelo')==='Otro / carga manual'?String(d.get('versionManual')).trim():d.get('version');if(!model||!version){alert('Seleccioná o completá modelo y versión.');return}const chosen=d.get('cobertura')==='todas'?coverages:coverages.filter(x=>x.id===d.get('cobertura'));const quotes=companies.filter(c=>c.enabled).flatMap(c=>chosen.map(cv=>({id:c.id,name:c.name,coverage:cv.name,discount:c.discount,price:Math.round(c.base*cv.factor*(1-c.discount/100))}))).sort((a,b)=>a.price-b.price);displayQuotes(quotes,plate,model+' '+version, (String(d.get('zonaManual')||'').trim() || ((String(d.get('localidadManual')||'').trim() || $('localidadGeoref').selectedOptions[0].textContent)+', '+$('provincia').selectedOptions[0].textContent)));$('resultados').scrollIntoView({behavior:'smooth'})});
 $('reset').addEventListener('click',()=>{companies=presets.map(c=>({...c,enabled:true}));drawCompanies();resetResults()});drawCompanies();
 // Georef Argentina: catálogo geográfico público (sin categorías de riesgo ni tarifas).
 // La llamada se hace desde el navegador y no transmite patente, CP ni datos del vehículo.
@@ -93,6 +110,51 @@ $('provincia').addEventListener('change',async()=>{
     const inp=document.createElement('input');inp.name='localidadManual';inp.required=true;inp.maxLength=100;inp.placeholder='Ingresar localidad';manual.append(inp);$('geoStatus').after(manual);
     $('geoStatus').textContent='No se pudo cargar localidades: '+e.message;
   }
+});
+
+let postalAbort=0,postalTimer;
+const normalizePostal=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+async function postalLookup(cp){
+const sequence=++postalAbort;if(!/^\d{4}$/.test(cp))return;
+$('postalStatus').textContent='Buscando localidades para CP '+cp+'…';
+try {
+ const resp=await fetch('https://api.zippopotam.us/AR/'+encodeURIComponent(cp));
+ if(!resp.ok)throw new Error('Sin coincidencias para este código postal');
+ const data=await resp.json();if(sequence!==postalAbort)return;
+ const places=Array.isArray(data.places)?data.places:[];
+ if(!places.length)throw new Error('Sin localidades');
+ const state=places[0].state||'';
+ const province=[...$('provincia').options].find(o=>normalizePostal(o.textContent)===normalizePostal(state));
+ if(province){
+  $('provincia').value=province.value;
+  await $('provincia').dispatchEvent(new Event('change'));
+ }
+ const select=$('localidadGeoref');
+ const matched=[...select.options].find(o=>places.some(p=>normalizePostal(p['place name'])===normalizePostal(o.textContent)));
+ if(matched)select.value=matched.value;
+ else if(places.length){const o=option('postal:'+cp,places[0]['place name']+' (postal, confirmar)');select.append(o);select.value=o.value;select.disabled=false}
+ $('postalStatus').textContent='CP '+cp+': '+places.map(p=>p['place name']).join(', ')+'. Verificá provincia y localidad; los códigos pueden corresponder a más de una zona.';
+ resetResults();
+} catch(e){if(sequence===postalAbort)$('postalStatus').textContent='CP no resuelto automáticamente. Completá provincia y localidad manualmente. ('+e.message+')'}
+}
+$('cp').addEventListener('input',()=>{
+clearTimeout(postalTimer);const code=$('cp').value.trim();if(code.length===4)postalTimer=setTimeout(()=>postalLookup(code),450);
+});
+$('localidadGeoref').addEventListener('change',async()=>{
+ const optionSelected=$('localidadGeoref').selectedOptions[0];if(!optionSelected||!$('provincia').value)return;
+ const city=optionSelected.textContent.replace(' (postal, confirmar)','');
+ const state=$('provincia').selectedOptions[0].textContent;
+ $('postalStatus').textContent='Buscando CP para '+city+'…';
+ try{
+  // Endpoint inverso documentado por Zippopotam.us; podría no disponer de todos los municipios argentinos.
+  const response=await fetch('https://api.zippopotam.us/AR/'+encodeURIComponent(state)+'/'+encodeURIComponent(city));
+  if(!response.ok)throw new Error('No disponible');
+  const rows=await response.json();const cps=[...new Set(rows.map(x=>x['post code']).filter(x=>/^\d{4}$/.test(x)))];
+  if(cps.length===1){$('cp').value=cps[0];$('postalStatus').textContent='CP sugerido: '+cps[0]+' (verificar).'}
+  else if(cps.length>1){$('postalStatus').textContent='Esta localidad tiene varios CP posibles ('+cps.slice(0,8).join(', ')+'). Ingresá el correspondiente al riesgo.';}
+  else $('postalStatus').textContent='No hay CP único para esta localidad. Ingresalo manualmente.';
+ }catch(e){$('postalStatus').textContent='No se pudo obtener un CP único para '+city+'. Ingresalo manualmente.'}
+ resetResults();
 });
 loadProvinces();
 
