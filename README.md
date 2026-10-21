@@ -1,39 +1,33 @@
-# Majoseg · Multicotizador Automotor
+# Majoseg — Multicotizador Autos
 
-Prototipo inicial del multicotizador de Majoseg, preparado para GitHub Pages.
+Prototipo estático para GitHub Pages: https://varelajoaquin2007-rgb.github.io/Multicotizador/
 
-## Funcionalidades de la versión 0.1
+## Versión 0.2
 
-- Carga manual de patente, año, marca, modelo y código postal.
-- Selección de uso y cobertura.
-- Activación/desactivación de aseguradoras de demostración.
-- Descuentos individuales sujetos a **topes ficticios**.
-- Comparador de resultados con **precios ficticios**.
-- Interfaz adaptable a computadoras y celulares.
+- Ramo **Autos**.
+- Aseguradoras seleccionables: **Mercantil Andina (35%)**, **MAPFRE (25%)**, **Victoria (50%)**.
+- Descuentos precargados conforme a los valores informados por Majoseg. **No están verificados como límites contractuales**. Los porcentajes editables son solo para probar la interfaz.
+- Selector dependiente de **marca → año → modelo → versión**, con catálogo **ilustrativo y limitado** que no representa los padrones oficiales de las compañías.
+- Opción de modelo y versión manual.
+- Patente y código postal del riesgo.
+- Cobertura predeterminada: **Todas las coberturas disponibles**. En la demo se muestran RC, terceros completo y todo riesgo con franquicia; en producción cada compañía debe responder con sus coberturas efectivamente disponibles.
+- Tabla de resultados simulados, ordenados por precio ficticio.
 
-**No hay integración real con aseguradoras, consulta de patente, login ni datos guardados.** No utilizar resultados simulados como presupuestos para clientes.
+## Importante
 
-## Publicación en GitHub Pages
+Esta versión **NO se conecta a ninguna aseguradora ni consulta patentes**. Los precios, bases y cálculos son totalmente ficticios. No usar como presupuesto ni oferta comercial. Los datos del formulario permanecen en el navegador y no se envían a ningún servicio.
 
-1. Abrir **Settings → Pages** en este repositorio.
-2. En *Build and deployment*, elegir **Deploy from a branch**.
-3. Seleccionar rama **main**, carpeta **/(root)** y guardar.
-4. Abrir [Multicotizador](https://varelajoaquin2007-rgb.github.io/Multicotizador/) una vez que GitHub publique la página.
+## Publicación
 
-El archivo `index.html` es autocontenido, sin herramientas de compilación ni dependencias externas.
+En GitHub, abrir **Settings > Pages**. Elegir **Deploy from a branch**, rama **main** y carpeta **/(root)**. El archivo `index.html` es autocontenido y no requiere compilación.
 
-## Arquitectura proyectada
+## Camino hacia cotizaciones reales
 
-- **Frontend**: sitio público de presentación y entorno de prueba; más adelante interfaz autenticada.
-- **Backend (separado de GitHub Pages)**: API segura para proveedores de datos vehiculares y conectores a compañías aseguradoras.
-- **Reglas comerciales**: por compañía, cobertura, producto, cuenta de productor, límites y vigencias, verificadas por el backend.
-- **Respuestas**: comparar premios reales, impuestos, franquicias, vigencia y errores de cada cotizador.
-- **Seguridad**: control de acceso, registros de auditoría, protección de datos y secretos solo en backend.
+1. Confirmar los descuentos autorizados y posibles restricciones por compañía, producto y PAS.
+2. Solicitar documentación y habilitación de API/Web Service de cada compañía; si no existe, evaluar integrador autorizado.
+3. Elegir un proveedor permitido de información de vehículos y validar su cobertura, exactitud, precio y licencia. El catálogo de demostración deberá reemplazarse por un catálogo real y por adaptadores de códigos de modelos de cada compañía.
+4. Crear backend privado fuera de GitHub Pages para manejar secretos, autenticación, llamadas a APIs y reglas comerciales.
+5. Consultar en paralelo todas las coberturas disponibles cuando el operador no seleccione ninguna; conservar descripción, límites, franquicias, impuestos y fecha de validez de cada oferta.
+6. Validar resultados contra cotizaciones manuales reales con los permisos correspondientes.
 
-## Seguridad
-
-GitHub Pages publica recursos accesibles a cualquiera. **Nunca subir claves API, contraseñas de compañías, cookies de sesión, tokens, datos personales de asegurados ni credenciales de PAS al repositorio**.
-
-## Próximo paso
-
-Definir compañías prioritarias, comprobar mecanismos de integración autorizados y validar reglas comerciales reales. Empezar por una única aseguradora, con su ambiente de pruebas, antes de automatizar cotizaciones reales.
+**Nunca guardar credenciales de PAS, contraseñas, tokens, datos de asegurados ni claves API en GitHub Pages o repositorios públicos.**
